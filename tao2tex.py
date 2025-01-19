@@ -883,6 +883,8 @@ def url2tex(
 
     metadata = soup_processor(primary_soup.find("p", "post-metadata"))
     metadata = "".join(metadata)
+    metadata = metadata.split(" ")[:3] # I only want the date, which is 
+    metadata = " ".join(metadata) # usually the first three words
 
     comment_strainer = SoupStrainer("div", id="comments")
     comment_soup = html2soup(raw_html, comment_strainer)
