@@ -716,7 +716,7 @@ def comments_section_title(comments_soup: BeautifulSoup) -> str:
     """Pulls out the comments section's title"""
     comments_title = "Comments"
     if title_found := comments_soup.find(attrs={"class": "comments-title"}):
-        comments_title = macro("section*", string_formatter(title_found.get_text()))
+        comments_title = macro("section", string_formatter(title_found.get_text()))
     return comments_title
 
 
@@ -917,6 +917,11 @@ def url2tex(
             "\n",
         ]
         + soup_processor(content)
+        + [
+            "\n",
+            "\\clearpage",
+            "\n",
+          ]
         + [comments_title]
         + processed_comments
         + [r"\end{document}"]

@@ -1,37 +1,57 @@
+% !TeX program = xelatex
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm}
 
+
+
+\usepackage{fontspec}%
+\newfontfeature{Microtype}{protrusion=default;expansion=default;}%
+\setmainfont{texgyrepagella-regular.otf}[%
+  Microtype,
+  Ligatures = TeX,
+  BoldFont = texgyrepagella-bold.otf,
+  ItalicFont = texgyrepagella-italic.otf,
+  BoldItalicFont = texgyrepagella-bolditalic.otf,
+]%
+\usepackage{unicode-math}%
+\setmathfont{texgyrepagella-math.otf}%
+
+\renewcommand{\baselinestretch}{1.1}
+\setcounter{secnumdepth}{0}
+
+
+
 \usepackage{enumitem}
 \setlist{leftmargin= 1.3em, labelsep=0.5em} % adjust spacing for lists
 %%% below are simple theorems that use amsthm only
-%	\newtheorem{theorem}{Theorem}
-%	\newtheorem{corollary}[theorem]{Corollary}
-%	\newtheorem{lemma}[theorem]{Lemma}
-%	\newtheorem{proposition}[theorem]{Proposition}
-%	\newtheorem{conjecture}[theorem]{Conjecture}
-%\theoremstyle{definition}
-%	\newtheorem{definition}[theorem]{Definition}
-%	\newtheorem{example}[theorem]{Example}
-%	\newtheorem{exercise}[theorem]{Exercise}
-% \theoremstyle{remark}
-%	\newtheorem{remark}[theorem]{Remark}
-%	\newtheorem{note}[theorem]{Note}
-\usepackage[framemethod=tikz]{mdframed}
-\mdfdefinestyle{tao}{outerlinewidth = 1,roundcorner=2pt,innertopmargin=0}
-	\newmdtheoremenv[style=tao]{theorem}{Theorem}
-	\newmdtheoremenv[style=tao]{corollary}[theorem]{Corollary}
-	\newmdtheoremenv[style=tao]{lemma}[theorem]{Lemma}
-	\newmdtheoremenv[style=tao]{proposition}[theorem]{Proposition}
-	\newmdtheoremenv[style=tao]{conjecture}[theorem]{Conjecture}
+	\newtheorem{theorem}{Theorem}
+	\newtheorem{corollary}[theorem]{Corollary}
+	\newtheorem{lemma}[theorem]{Lemma}
+	\newtheorem{proposition}[theorem]{Proposition}
+	\newtheorem{conjecture}[theorem]{Conjecture}
 \theoremstyle{definition}
-	\newmdtheoremenv[style=tao]{definition}[theorem]{Definition}
-	\newmdtheoremenv[style=tao]{example}[theorem]{Example}
-	\newmdtheoremenv[style=tao]{exercise}[theorem]{Exercise}
-% \theoremstyle{remark}
-	\newmdtheoremenv[style=tao]{remark}[theorem]{Remark}
+	\newtheorem{definition}[theorem]{Definition}
+	\newtheorem{example}[theorem]{Example}
+	\newtheorem{exercise}[theorem]{Exercise}
+\theoremstyle{remark}
+	\newtheorem{remark}[theorem]{Remark}
 	\newtheorem{note}[theorem]{Note}
-	\usepackage[margin=3cm]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+% \mdfdefinestyle{tao}{outerlinewidth = 1,roundcorner=2pt,innertopmargin=0}
+% 	\newmdtheoremenv[style=tao]{theorem}{Theorem}
+% 	\newmdtheoremenv[style=tao]{corollary}[theorem]{Corollary}
+% 	\newmdtheoremenv[style=tao]{lemma}[theorem]{Lemma}
+% 	\newmdtheoremenv[style=tao]{proposition}[theorem]{Proposition}
+% 	\newmdtheoremenv[style=tao]{conjecture}[theorem]{Conjecture}
+% \theoremstyle{definition}
+% 	\newmdtheoremenv[style=tao]{definition}[theorem]{Definition}
+% 	\newmdtheoremenv[style=tao]{example}[theorem]{Example}
+% 	\newmdtheoremenv[style=tao]{exercise}[theorem]{Exercise}
+% % \theoremstyle{remark}
+% 	\newmdtheoremenv[style=tao]{remark}[theorem]{Remark}
+% 	\newtheorem{note}[theorem]{Note}
+% 	\usepackage[margin=3cm]{geometry}
 \usepackage[normalem]{ulem} % needed for strikethroughs
 \usepackage{graphicx}
 %%%%% If you find emoji in the blogpost (perhaps in the comments), 
@@ -48,12 +68,14 @@
 			linkcolor = blue]{hyperref}
 \makeatletter         
 \renewcommand\maketitle{
-\noindent {\Large TTT-BLOG-TITLE}\\
-\textcolor{gray}{TTT-TAGLINE}
+% \noindent {\Large TTT-BLOG-TITLE}\\
+% \textcolor{gray}{TTT-TAGLINE}
 {\begin{center}
-{\Huge \bfseries\sffamily  \@title{}}
+{\Large \bfseries  \@title{}}
 \end{center}}
-{\noindent\footnotesize TTT-METADATA}\\
-{\tiny TTT-SIGNATURE\\ \hrule  \vspace{4ex}}}
+% {\noindent\footnotesize TTT-METADATA}\\
+% {\tiny TTT-SIGNATURE\\ \hrule  \vspace{4ex}}
+{\vspace{4ex}}
+}
 \makeatother
 \title{TTT-TITLE}
